@@ -17,41 +17,7 @@
         <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- SimpleLightbox plugin JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <!-- * *                               SB Forms JS                               * *-->
-        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script>
-            $("#submitButton").click(function (event) {         
-                //preventDefault 는 기본으로 정의된 이벤트를 작동하지 못하게 하는 메서드이다. submit을 막음 
-                event.preventDefault(); 
-                $("#submitButton").prop("disabled", true);         
-                $.post("https://script.google.com/macros/s/AKfycbzmWNBtFFfujNsIzyGRa0BjQG7P3aoD0CpjwdRt8oWBRJ0lhFYty9R5mqbkSf-Dmvkd/exec",
-                    $('#contactForm').serialize(),                
-                    function(data,status) {
-                        if (data.trim() == "ok") {
-                            alert("산타 클로스에게 전달되었습니다.");   
-                            $("#submitButton").prop("disabled", false);
-                            location.reload();
-                            //console.log(status);
-                        } else {
-                            alert("산타 클로스에게 전달 실패");   
-                        }
-                        //alert("Data: " + data + "\nStatus: " + status);
-                        //$("#div1").html(data);
-                });
-            });
-        </script>
+        
     </head>
     <body id="page-top">
         <!-- Navigation-->
@@ -265,7 +231,7 @@
                             <!-- an error submitting the form-->
                             <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
                             <!-- Submit Button-->
-                            <div class="d-grid"><button class="btn btn-primary btn-xl" id="submitmail" type="submit">Submit</button></div>
+                            <div class="d-grid"><button class="btn btn-primary btn-xl" id="submitButton" type="submit">Submit</button></div>
                             <br/>
                        </form>
                     </div>
@@ -283,6 +249,40 @@
         <footer class="bg-light py-5">
             <div class="container px-4 px-lg-5"><div class="small text-center text-muted">Copyright &copy; 2021 - Company Name</div></div>
         </footer>
-        
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- SimpleLightbox plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- * *                               SB Forms JS                               * *-->
+        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+            $("#submitButton").click(function (event) {         
+                //preventDefault 는 기본으로 정의된 이벤트를 작동하지 못하게 하는 메서드이다. submit을 막음 
+                event.preventDefault(); 
+                $("#submitButton").prop("disabled", true);         
+                $.post("https://script.google.com/macros/s/AKfycbzmWNBtFFfujNsIzyGRa0BjQG7P3aoD0CpjwdRt8oWBRJ0lhFYty9R5mqbkSf-Dmvkd/exec",
+                    $('#contactForm').serialize(),                
+                    function(data,status) {
+                        if (data.trim() == "ok") {
+                            alert("산타 클로스에게 전달되었습니다.");   
+                            $("#submitButton").prop("disabled", false);
+                            location.reload();
+                            //console.log(status);
+                        } else {
+                            alert("산타 클로스에게 전달 실패");   
+                        }
+                        //alert("Data: " + data + "\nStatus: " + status);
+                        //$("#div1").html(data);
+                });
+            });
+        </script>
     </body>
 </html>
