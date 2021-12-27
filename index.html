@@ -36,7 +36,7 @@
                 //preventDefault 는 기본으로 정의된 이벤트를 작동하지 못하게 하는 메서드이다. submit을 막음 
                 event.preventDefault(); 
                 $("#submitButton").prop("disabled", true);         
-                $.post("https://script.google.com/macros/s/AKfycbxnE8Bs5XCyK77Vlae7jBYS5sH2lf2IaV3mHWlOvMtTSAASSy99P6GCb_HVoIyHqrcf/exec",
+                $.post("https://script.google.com/macros/s/AKfycbzmWNBtFFfujNsIzyGRa0BjQG7P3aoD0CpjwdRt8oWBRJ0lhFYty9R5mqbkSf-Dmvkd/exec",
                     $('#contactForm').serialize(),                
                     function(data,status) {
                         if (data.trim() == "ok") {
